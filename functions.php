@@ -51,6 +51,7 @@ function fwd_setup() {
 		array(
 			'header' => esc_html__( 'Header Menu Location', 'fwd' ),
 			'footer-left' => esc_html__( 'Footer Menu Location', 'fwd' ),
+			'footer-socials' => esc_html__('Footer Socials Location', 'fwd' ),
 		)
 	);
 
