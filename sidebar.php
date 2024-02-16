@@ -7,8 +7,8 @@
  * @package FWD_Starter_Theme
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
+ if ( is_page() && is_active_sidebar( 'sidebar-2' ) ) {
+    dynamic_sidebar( 'sidebar-2' );
 }
 ?>
 

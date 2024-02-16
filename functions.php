@@ -147,6 +147,18 @@ function fwd_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar 2', 'fwd' ),
+			'id'            => 'sidebar-2',
+			'description'   => esc_html__( 'Add extra widgets here.', 'fwd' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+		);
 }
 add_action( 'widgets_init', 'fwd_widgets_init' );
 
