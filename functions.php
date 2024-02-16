@@ -50,6 +50,7 @@ function fwd_setup() {
 	register_nav_menus(
 		array(
 			'header' => esc_html__( 'Header Menu Location', 'fwd' ),
+			'footer-left' => esc_html__( 'Footer Menu Location', 'fwd' ),
 		)
 	);
 
