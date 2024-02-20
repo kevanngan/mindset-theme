@@ -46,6 +46,14 @@ function fwd_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	// Custom crop sizes
+	add_image_size( 
+		'portrait-blog', // name of crop
+		200, 			 // maximum width in pixels
+		250, 			 // maximum height in pixels
+		true 			 // should the image be cropped? hard crop
+	);
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(

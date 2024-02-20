@@ -16,10 +16,12 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			// get_template_part( 'template-parts/content', 'page' );
 			?>
 	
-			<section class="home-intro"></section>
+			<section class="home-intro">
+				<?php the_post_thumbnail(); ?>
+			</section>
 
 			<section class="home-work"></section>
 
