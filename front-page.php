@@ -31,7 +31,29 @@ get_header();
 
 			<section class="home-sldier"></section>
 			
-			<section class="home-blog"></section>
+			<section class="home-blog">
+				<h2><?php esc_html_e( 'Latest Blog Posts', 'fwd');?></h2>
+				<?php
+				$args = array(
+					'posts_type' 	 => 'posts',
+					'posts_per_page' => 2
+				);
+				$blog_query = new WP_Query( $args );
+				if ( $blog_query -> have_posts() ) {
+					while ( $blog_query -> have_posts() ) {
+                        $blog_query -> the_post();
+                        ?>
+						<article>
+							<h3>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</h3>
+						</article>
+						<?php
+                    }
+					wp_reset_postdata();
+				}
+				?>
+			</section>
 
 			<?php
 		endwhile; // End of the loop.
