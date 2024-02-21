@@ -18,7 +18,7 @@
 		<div class="footer-menus">
 			<nav id="footer-navigation" class="footer-navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'footer-left') ); ?>
-				<?php fwd_privacy_policy_link(); ?>
+				<?php the_privacy_policy_link(); ?>
 			</nav>
 			<nav id="footer-navigation" class="footer-navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'footer-socials') ); ?>

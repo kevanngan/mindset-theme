@@ -213,3 +213,22 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// Add theme color meta tag
+function fwd_theme_color() {
+	echo '<meta name="theme-color" content="#fff200" />';
+}
+add_action( 'wp_head', 'fwd_theme_color', 1);
+
+// Change excerpt length from 55 to 20 words
+function fwd_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
+
+// Change excerpt more text to a link
+function fwd_excerpt_more( $more ) {
+	$more = '... <a href="'. esc_url( get_permalink() ) .'">Continue Reading</a>';
+	return $more;
+}
+add_filter( 'excerpt_more', 'fwd_excerpt_more' );

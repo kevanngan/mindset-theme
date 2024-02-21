@@ -152,18 +152,4 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
-
-if ( ! function_exists( 'fwd_privacy_policy_link' ) ) :
-    /**
-     * Output a link to the Privacy Policy page.
-     */
-    function fwd_privacy_policy_link() {
-        $privacy_policy_url = get_privacy_policy_url();
-        printf(
-            '<a href="%s">%s</a>',
-            esc_url( $privacy_policy_url ),
-            esc_html__( 'Privacy Policy', 'fwd' )
-        );
-    }
-endif;
 ?>

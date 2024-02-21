@@ -46,13 +46,10 @@ get_header();
                         $blog_query -> the_post();
                         ?>
 						<article>
-							<h3>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</h3>
+							<a href="<?php the_permalink(); ?>">
+							<h3><?php the_title(); ?></a></h3>
+							<?php the_post_thumbnail( 'latest-blog-post-image' ); ?>
 							<p><?php echo get_the_date(); ?></p>
-							<?php if ( has_post_thumbnail() ) { ?>
-									<?php the_post_thumbnail( 'latest-blog-post-image' ); ?>
-							<?php } ?>
 						</article>
 						<?php
                     }
