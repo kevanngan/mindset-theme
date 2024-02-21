@@ -271,6 +271,25 @@ function fwd_block_editor_templates() {
     }
 
 	// Template for Contact Page
+	if ( isset( $_GET['post'] ) && '6' == $_GET['post'] ) {
+        $post_type_object = get_post_type_object( 'page' );
+        $post_type_object->template = array(
+			// define blocks here...
+			array( 
+				'core/paragraph', 
+				array( 
+					'placeholder' => 'Add your introduction here...'
+				) 
+			),
+			array( 
+				'core/shortcode', 
+				array( 
+					'content' => '[contact_form_shortcode_here]'
+				) 
+			),
+        );
+        $post_type_object->template_lock = 'all';
+    }
 
 }
 add_action( 'init', 'fwd_block_editor_templates' );
