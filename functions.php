@@ -54,6 +54,13 @@ function fwd_setup() {
 		true 			 // should the image be cropped? hard crop
 	);
 
+	add_image_size(
+		'latest-blog-post-image',
+		400,
+		200,
+		true
+	);
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(

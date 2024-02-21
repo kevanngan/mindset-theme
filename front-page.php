@@ -38,7 +38,7 @@ get_header();
 				<?php
 				$args = array(
 					'posts_type' 	 => 'posts',
-					'posts_per_page' => 2
+					'posts_per_page' => 4
 				);
 				$blog_query = new WP_Query( $args );
 				if ( $blog_query -> have_posts() ) {
@@ -49,6 +49,10 @@ get_header();
 							<h3>
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</h3>
+							<p><?php echo get_the_date(); ?></p>
+							<?php if ( has_post_thumbnail() ) { ?>
+									<?php the_post_thumbnail( 'latest-blog-post-image' ); ?>
+							<?php } ?>
 						</article>
 						<?php
                     }
