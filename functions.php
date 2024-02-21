@@ -274,3 +274,15 @@ function fwd_block_editor_templates() {
 
 }
 add_action( 'init', 'fwd_block_editor_templates' );
+
+// Remove the block editor from Pages
+function fwd_post_filter( $use_block_editor, $post ) {
+    // Change 112 to your Page ID
+    $page_ids = array( 77 );
+    if ( in_array( $post->ID, $page_ids ) ) {
+        return false;
+    } else {
+        return $use_block_editor;
+    }
+}
+add_filter( 'use_block_editor_for_post', 'fwd_post_filter', 10, 2 );
