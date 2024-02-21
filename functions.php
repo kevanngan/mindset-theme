@@ -232,3 +232,45 @@ function fwd_excerpt_more( $more ) {
 	return $more;
 }
 add_filter( 'excerpt_more', 'fwd_excerpt_more' );
+
+// Add Block Templates to Pages
+function fwd_block_editor_templates() {
+    // Template for Test (Blocks) page
+    if ( isset( $_GET['post'] ) && '62' == $_GET['post'] ) {
+        $post_type_object = get_post_type_object( 'page' );
+        $post_type_object->template = array(
+			// define blocks here...
+			array( 
+				'core/paragraph', 
+				array( 
+					'placeholder' => 'Add your introduction here...'
+				) 
+			),
+			array( 
+				'core/heading', 
+				array( 
+					'placeholder' => 'Add your heading here...',
+					'level' => 2
+				) 
+			),
+			array( 
+				'core/image', 
+				array( 
+					'align' => 'left', 
+					'sizeSlug' => 'medium' 
+				)
+			),
+			array( 
+				'core/paragraph', 
+				array( 
+					'placeholder' => 'Add text here...'
+				) 
+			),
+        );
+        $post_type_object->template_lock = 'all';
+    }
+
+	// Template for Contact Page
+
+}
+add_action( 'init', 'fwd_block_editor_templates' );
