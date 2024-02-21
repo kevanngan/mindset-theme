@@ -128,24 +128,13 @@ if ( ! function_exists( 'fwd_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail( 'large' ); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				?>
+			<a class="post-thumbnail alignleft" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+				<?php the_post_thumbnail( 'portrait-blog' ); ?>
 			</a>
 
 			<?php
@@ -163,3 +152,18 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+if ( ! function_exists( 'fwd_privacy_policy_link' ) ) :
+    /**
+     * Output a link to the Privacy Policy page.
+     */
+    function fwd_privacy_policy_link() {
+        $privacy_policy_url = get_privacy_policy_url();
+        printf(
+            '<a href="%s">%s</a>',
+            esc_url( $privacy_policy_url ),
+            esc_html__( 'Privacy Policy', 'fwd' )
+        );
+    }
+endif;
+?>
