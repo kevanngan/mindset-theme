@@ -30,7 +30,29 @@ get_header();
 				?>
 			</section>
 
-			<section class="home-work"></section>
+			<section class="home-work">
+				<?php
+				$args = array(
+					'post_type' => 'fwd-work',
+					'posts_per_page' => 4
+				);
+				$query = new WP_Query( $args );
+				if ( $query -> have_posts()) {
+					while ( $query -> have_posts() ) {
+						$query -> the_post();
+						?>
+						<article>
+							<a href="<?php the_permalink(); ?>">
+								<h3><?php the_title(); ?></h3>
+								<?php the_post_thumbnail( 'medium' ); ?>
+							</a>
+						</article>
+						<?php
+					}
+					wp_reset_postdata();
+				}
+				?>
+			</section>
 
 			<section class="home-work"></section>
 

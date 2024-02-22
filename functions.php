@@ -193,6 +193,11 @@ function fwd_scripts() {
 add_action( 'wp_enqueue_scripts', 'fwd_scripts' );
 
 /**
+ * Register Custom Post Types & Custom Taxonomies.
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
