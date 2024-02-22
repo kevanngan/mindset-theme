@@ -12,7 +12,27 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="footer-contact">
+		<div class="footer-contact">	
+			<?php
+			if ( function_exists( 'get_field' ) ) {
+				if ( ! is_page('contact') ) {
+					if ( get_field('physical_address', 6) ) {
+						echo '<div class="footer-contact-left">';
+							the_field('physical_address', 6);
+						echo '</div>';
+					}
+					if ( get_field('email_address', 6) ) {
+						$email  = get_field( 'email_address', 6 );
+						$mailto = 'mailto:' . $email;
+						?>
+						<div class="footer-contact-right">
+							<p><a href="<?php echo esc_url( $mailto ); ?> "><?php echo esc_html( $email ); ?></a></p>
+						</div>
+						<?php
+					}
+				}
+			}
+			?>
 			
 		</div><!-- .footer-contact -->
 		<div class="footer-menus">

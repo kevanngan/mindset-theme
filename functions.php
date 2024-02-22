@@ -274,19 +274,8 @@ function fwd_block_editor_templates() {
 	if ( isset( $_GET['post'] ) && '6' == $_GET['post'] ) {
         $post_type_object = get_post_type_object( 'page' );
         $post_type_object->template = array(
-			// define blocks here...
-			array( 
-				'core/paragraph', 
-				array( 
-					'placeholder' => 'Add your introduction here...'
-				) 
-			),
-			array( 
-				'core/shortcode', 
-				array( 
-					'content' => '[contact_form_shortcode_here]'
-				) 
-			),
+			array( 'core/paragraph'),
+			array( 'core/shortcode'),
         );
         $post_type_object->template_lock = 'all';
     }
@@ -297,7 +286,7 @@ add_action( 'init', 'fwd_block_editor_templates' );
 // Remove the block editor from Pages
 function fwd_post_filter( $use_block_editor, $post ) {
     // Change 112 to your Page ID
-    $page_ids = array( 77 );
+    $page_ids = array( 77, 12 );
     if ( in_array( $post->ID, $page_ids ) ) {
         return false;
     } else {
