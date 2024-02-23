@@ -16,19 +16,39 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-
     <?php
     while (have_posts()) :
         the_post();
-
         get_template_part('template-parts/content', 'page');
-
-        // If comments are open or we have at least one comment, load up the comment template.
         if (comments_open() || get_comments_number()) :
             comments_template();
         endif;
-
     endwhile; // End of the loop.
+    ?>
+    <?php
+    // Get the terms for the "fwd-service-category" taxonomy
+    $terms = get_terms(array(
+        'taxonomy' => 'fwd-service-category'
+    ));
+
+    if ($terms && !is_wp_error($terms)) {
+        foreach ($terms as $term) {
+            // Output the term name
+            echo '<h2>'. $term->name .'</h2>';
+
+            // Query service posts for the current term
+            $args = array(
+                'post_type' =>'fwd-service',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'fwd-service-category',
+                        'field' => 'slug',
+                        'terms' => $term->slug
+                    )
+                )
+            );
+        }
+    }
     ?>
 
     <?php

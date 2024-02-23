@@ -22,5 +22,6 @@
 	?>
 
     <?php get_template_part('template-parts/work', 'categories')?>
+    <?php get_template_part('template-parts/random', 'testimonial')?>
 
 </aside><!-- #secondary -->

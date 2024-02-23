@@ -186,6 +186,34 @@ function fwd_register_taxonomies() {
     );
 
     register_taxonomy( 'fwd-featured', array( 'fwd-work' ), $args );
+
+    // Add Service Category 
+    $labels = array(
+        'name'              => _x( 'Service Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Service Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Service Categories' ),
+        'all_items'         => __( 'All Service Category' ),
+        'parent_item'       => __( 'Parent Service Category' ),
+        'parent_item_colon' => __( 'Parent Service Category:' ),
+        'edit_item'         => __( 'Edit Service Category' ),
+        'view_item'         => __( 'View Service Category' ),
+        'update_item'       => __( 'Update Service Category' ),
+        'add_new_item'      => __( 'Add New Service Category' ),
+        'new_item_name'     => __( 'New Servicek Category Name' ),
+        'menu_name'         => __( 'Service Category' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'service-categories' ),
+    );
+    register_taxonomy( 'fwd-service-category', array( 'fwd-service' ), $args );
 }
 add_action( 'init', 'fwd_register_taxonomies');
 
