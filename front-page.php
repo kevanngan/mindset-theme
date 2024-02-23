@@ -31,10 +31,18 @@ get_header();
 			</section>
 
 			<section class="home-work">
+				<h2>Featured Works</h2>
 				<?php
 				$args = array(
 					'post_type' => 'fwd-work',
-					'posts_per_page' => 4
+					'posts_per_page' => 4,
+					'tax query'      => array(
+						array(
+                            'taxonomy' => 'fwd-featured',
+                            'field'    => 'slug',
+                            'terms'    => 'front-page'
+                        )
+					)
 				);
 				$query = new WP_Query( $args );
 				if ( $query -> have_posts()) {
