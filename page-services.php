@@ -15,6 +15,60 @@
 get_header();
 ?>
 
+<?php
+$taxonomy = 'fwd-service-category';
+$terms    = get_terms(
+    array(
+        'taxonomy' => $taxonomy
+    )
+);
+if($terms && ! is_wp_error($terms) ){
+    foreach($terms as $term){
+        $args = array(
+            'post_type'      => 'fwd-service',
+            'posts_per_page' => -1,
+            'order'          => 'ASC',
+            'orderby'        => 'title',
+            'tax_query'      => array(
+                array(
+                    'taxonomy' => $taxonomy,
+                    'field'    => 'slug',
+                    'terms'    => $term->slug,
+                )
+            ),
+        );
+         
+        $query = new WP_Query( $args );
+         
+        if ( $query -> have_posts() ) {
+            // Output Term name.
+            echo '<h2>' . esc_html( $term->name ) . '</h2>';
+         
+            // Output Navigation.
+            // while ( $query -> have_posts() ) {
+            //     $query -> the_post();
+            //     echo '<a href="#'. esc_attr( get_the_ID() ) .'">'. esc_html( get_the_title() ) .'</a>';
+            // }
+            // wp_reset_postdata();
+         
+            // Output Content.
+            while ( $query -> have_posts() ) {
+                $query -> the_post();
+         
+                if ( function_exists( 'get_field' ) ) {
+                    if ( get_field( 'service_text' ) ) {
+                        echo '<h4 id="'. esc_attr( get_the_ID() ) .'">'. esc_html( get_the_title() ) .'</h4>';
+                        the_field( 'service_text' );
+                    }
+                }
+         
+            }
+            wp_reset_postdata();
+        }
+    }
+}
+?>
+
 <main id="primary" class="site-main">
     <?php
     while (have_posts()) :
@@ -24,31 +78,6 @@ get_header();
             comments_template();
         endif;
     endwhile; // End of the loop.
-    ?>
-    <?php
-    // Get the terms for the "fwd-service-category" taxonomy
-    $terms = get_terms(array(
-        'taxonomy' => 'fwd-service-category'
-    ));
-
-    if ($terms && !is_wp_error($terms)) {
-        foreach ($terms as $term) {
-            // Output the term name
-            echo '<h2>'. $term->name .'</h2>';
-
-            // Query service posts for the current term
-            $args = array(
-                'post_type' =>'fwd-service',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'fwd-service-category',
-                        'field' => 'slug',
-                        'terms' => $term->slug
-                    )
-                )
-            );
-        }
-    }
     ?>
 
     <?php

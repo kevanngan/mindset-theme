@@ -18,6 +18,7 @@
 				if ( ! is_page('contact') ) {
 					if ( get_field('physical_address', 6) ) {
 						echo '<div class="footer-contact-left">';
+							get_template_part( 'images/location' );
 							the_field('physical_address', 6);
 						echo '</div>';
 					}
