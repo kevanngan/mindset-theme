@@ -182,13 +182,12 @@ add_action( 'widgets_init', 'fwd_widgets_init' );
  */
 function fwd_scripts() {
 	wp_enqueue_style(
-		'fwd-googlefonts', // unique handle
-		'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap', // url to css file
-		array(), // dependencies
-		null // version, set to null for google fonts
-	);
-	
-	
+        'fwd-googlefonts', // unique handle
+        'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800&family=Montserrat:ital,wght@0,100..900&display=swap', // Combined URL with both font families (open sans, montserrat)
+        array(), // dependencies
+        null // version, set to null for Google Fonts
+    );
+
 	wp_enqueue_style( 'fwd-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'fwd-style', 'rtl', 'replace' );
 
@@ -204,6 +203,9 @@ function fwd_scripts() {
 		wp_enqueue_script( 'swiper-scripts', get_template_directory_uri() .'/js/swiper-bundle.min.js', array(), '11.0.6', array( 'strategy' => 'defer' )  );
 		wp_enqueue_script( 'swiper-settings', get_template_directory_uri() .'/js/swiper-settings.js', array( 'swiper-scripts' ), _S_VERSION, array( 'strategy' => 'defer' )  );
 	}
+
+	// scroll to top function
+	wp_enqueue_script('scroll-to-top', get_template_directory_uri() . '/js/scroll-to-top.js', array(), _S_VERSION, true);
 }
 add_action( 'wp_enqueue_scripts', 'fwd_scripts' );
 
