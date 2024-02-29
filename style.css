@@ -1073,9 +1073,7 @@ svg path {
 }
 
 /* Service Page*/
-
-.page-id-14 .service-navigation  ul {
-	list-style: none;
+.page-id-14 .service-navigation {
 	border: 6px double #fff200;
 	background-color: #f9f9f9;
 	padding: 0 2em;
@@ -1083,8 +1081,15 @@ svg path {
 	text-align: center;
 }
 
+.page-id-14 .service-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 .page-id-14 .service-navigation li {
 	padding: 1rem;
+	display: block;
 }
 
 @media screen and (min-width: 50em) {
