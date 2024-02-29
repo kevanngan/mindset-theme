@@ -1017,7 +1017,7 @@ svg path {
 }
 
 @media screen and (min-width: 50em) {
-	.home-work h2 {
+	h2 {
 		font-size: 2.25rem;
 		width: 100%;
 	}
@@ -1042,6 +1042,18 @@ svg path {
 		margin-right: 8%;
 	}
 	
+	.home-blog {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.home-blog article {
+		text-align: center;
+		margin: 1em 0 1em;
+		max-width: 450px;
+		width: 100%;
+	}
 }
 
 /* Works Page*/
