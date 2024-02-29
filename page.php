@@ -46,7 +46,6 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-	<button id="scroll-to-top-btn" class="scroll-to-top-btn">Scroll To Top</button>
 	</main><!-- #primary -->
 
 <?php

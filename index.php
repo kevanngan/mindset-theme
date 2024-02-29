@@ -49,7 +49,6 @@ get_header();
 
 		endif;
 		?>
-	<button id="scroll-to-top-btn" class="scroll-to-top-btn">Scroll To Top</button>
 	</main><!-- #primary -->
 
 <?php

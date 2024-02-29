@@ -722,8 +722,11 @@ svg path {
 	}
 
 	.no-sidebar .site,
-	.page-template-full-width .site 
-	.page-id-8 .site{
+	.page-template-full-width .site, 
+	.page-id-12 .site,
+	.page-id-8 .site,
+	.post-type-archive-fwd-work .site,
+	.single-fwd-work .site {
 		grid-template-columns: 1fr minmax(0, 1000px) 1fr;
 		grid-template-areas:
 			"header header header"

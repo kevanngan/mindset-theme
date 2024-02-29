@@ -12,6 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+	<button id="scroll-to-top-btn" class="scroll-to-top-btn">Scroll To Top</button>
 		<div class="footer-contact">	
 			<?php
 			if ( function_exists( 'get_field' ) ) {
