@@ -46,11 +46,11 @@ if($terms && ! is_wp_error($terms) ){
             echo '<h2>' . esc_html( $term->name ) . '</h2>';
          
             // Output Navigation.
-            while ( $query -> have_posts() ) {
-                $query -> the_post();
-                echo '<a href="#'. esc_attr( get_the_ID() ) .'">'. esc_html( get_the_title() ) .'</a>';
-            }
-            wp_reset_postdata();
+            // while ( $query -> have_posts() ) {
+            //     $query -> the_post();
+            //     echo '<a href="#'. esc_attr( get_the_ID() ) .'">'. esc_html( get_the_title() ) .'</a>';
+            // }
+            // wp_reset_postdata();
          
             // Output Content.
             while ( $query -> have_posts() ) {
