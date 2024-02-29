@@ -1061,6 +1061,17 @@ svg path {
 	font-size: 1.75rem;
 }
 
+@media screen and (min-width: 50em) {
+	.post-type-archive-fwd-work .work-section {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.post-type-archive-fwd-work article {
+		width: 33.3%;
+	}
+}
+
 /* Footer
 --------------------------------------------- */
 .site-footer {
