@@ -19,7 +19,8 @@
 }
 /* FONT_END */
 :root {
-  --swiper-theme-color: #007aff;
+  --swiper-pagination-color: #fff200;
+  --swiper-theme-color: #cccccc;
   /*
   --swiper-preloader-color: var(--swiper-theme-color);
   --swiper-wrapper-transition-timing-function: initial;
@@ -404,8 +405,8 @@
   transform: scale(0.33);
 }
 .swiper-pagination-bullet {
-  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 20px));
+  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 20px));
   display: inline-block;
   border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
   background: var(--swiper-pagination-bullet-inactive-color, #000);

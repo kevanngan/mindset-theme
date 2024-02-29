@@ -50,8 +50,8 @@ get_header();
 						?>
 						<article>
 							<a href="<?php the_permalink(); ?>">
-								<h3><?php the_title(); ?></h3>
 								<?php the_post_thumbnail( 'medium' ); ?>
+								<p><?php the_title(); ?></p>
 							</a>
 						</article>
 						<?php
@@ -102,6 +102,7 @@ get_header();
 			</section>
 
 			<section class="home-sldier">
+			<h2>Testimonials</h2>
 			<?php
 			$args = array(
 				'post_type'      => 'fwd-testimonial',
@@ -120,8 +121,6 @@ get_header();
 						<?php endwhile; ?>
 					</div>
 					<div class="swiper-pagination"></div>
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
 				</div>
 				<?php
 				wp_reset_postdata();
@@ -142,10 +141,10 @@ get_header();
                         $blog_query -> the_post();
                         ?>
 						<article>
-							<a href="<?php the_permalink(); ?>">
-							<h3><?php the_title(); ?></a></h3>
 							<?php the_post_thumbnail( 'latest-blog-post-image' ); ?>
-							<p><?php echo get_the_date(); ?></p>
+							<a href="<?php the_permalink(); ?>">
+							<h3 class="home-h3"><?php the_title(); ?></h3>
+							<p class="home-p"><?php echo get_the_date(); ?></p></a>
 						</article>
 						<?php
                     }

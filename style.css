@@ -427,7 +427,7 @@ h1 {
 }
 
 h2 {
-	font-size: 2.25rem;
+	font-size: 2rem;
 }
 
 h3 {
@@ -543,6 +543,13 @@ dt {
 
 dd {
 	margin: 0 1.5em 1.5em;
+}
+
+.scroll-to-top-btn {
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	cursor: pointer;
 }
 
 /* Make sure embeds and iframes fit their containers. */
@@ -989,6 +996,57 @@ svg path {
 	border: none;
 	padding: 0;
 	text-align: left;
+}
+
+/* Home Page*/
+.page-id-12 .wp-block-pullquote {
+	border: none;
+	border-left-color: rgb(64, 64, 64);
+	border-left-style: solid;
+	border-left-width: 4px;
+}
+
+.home-h3 {
+	text-align: center;
+	margin: 7px 0;
+}
+
+.home-p {
+	text-align: center;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 50em) {
+	.home-work h2 {
+		font-size: 2.25rem;
+		width: 100%;
+	}
+
+	.home-work {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.home-work img {
+		width: 242px;
+	}
+
+	.home-left,
+	.home-right {
+		display: inline-block;
+		width: 45%;
+		vertical-align: top;
+	}
+
+	.home-left {
+		margin-right: 8%;
+	}
+	
+}
+
+/* Works Page*/
+.post-type-archive-fwd-work h2 {
+	font-size: 1.75rem;
 }
 
 /* Footer
