@@ -1011,12 +1011,26 @@ svg path {
 	margin: 7px 0;
 }
 
-.home-p {
+.home-work {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.home-work p {
 	text-align: center;
-    margin: 0 auto;
 }
 
-@media screen and (min-width: 50em) {
+.home-blog {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-blog article {
+	text-align: center;
+}
+
+@media screen and (min-width: 40em) {
 	h2 {
 		font-size: 2.25rem;
 		width: 100%;
@@ -1024,6 +1038,7 @@ svg path {
 
 	.home-work {
 		display: flex;
+		flex-direction: row;
 		flex-wrap: wrap;
 	}
 
@@ -1044,12 +1059,12 @@ svg path {
 	
 	.home-blog {
 		display: flex;
+		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
 
 	.home-blog article {
-		text-align: center;
 		margin: 1em 0 1em;
 		max-width: 450px;
 		width: 100%;
@@ -1061,9 +1076,10 @@ svg path {
 	font-size: 1.75rem;
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 40em) {
 	.post-type-archive-fwd-work .work-section {
 		display: flex;
+		flex-direction: row;
 		flex-wrap: wrap;
 	}
 
@@ -1092,7 +1108,7 @@ svg path {
 	display: block;
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 40em) {
 	.page-id-14 .service-navigation ul {
 		display: flex;
 		justify-content: space-between;
